@@ -1,0 +1,4 @@
+django
+langchain
+docx2txt
+pip install qdrant-client
