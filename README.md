@@ -71,4 +71,28 @@ curl -X POST -F "archivo_docx=@Test.docx" http://127.0.0.1:8000/cargar-docx/
 ```
 Este comando sube el archivo Test.docx al endpoint. Este archvio se ve de esta manera: 
 
-![Descripción de la imagen](Images/Docx.PNG)
+![Documento de ejemplo](Images/Docx.PNG)
+
+Seguidamente, se corren los siguientes comandos para subir el archvio el endpoint:
+
+```
+curl -X POST -F "archivo_docx=@Test.docx" http://127.0.0.1:8000/cargar-docx/
+
+```
+
+Y finalmente se corre el siguiente comando con la query deseada para obtener el documento con mayor coincidencia:
+```
+curl -X POST -d "query=inteligencia artificial" http://127.0.0.1:8000/buscar-documentos/
+
+```
+Esto devuelve el documento con mayor similaridad.
+
+Esto se ve reflejado de esta manera en la terminal:
+
+![Terminal](Images/Terminal.PNG) 
+
+ ---
+* Seguridad: Ya que el proyecto utiliza la API de OpenAI, es necesario contar con una API-KEY. En este caso, se añade la clave al archivo config.json ubicado en mi_proyecto\Keys\config.json. Esto permite colocar una sola API-KEY y no dejarla como una varible local en el codigo.
+
+![Secret_key](Images/Captura.PNG) 
+  
