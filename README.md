@@ -17,7 +17,7 @@ conda activate mi_entorno_virtual
 ```
 4.Instala los paquetes necesarios utilizando pip:
 ```
-conda activate mi_entorno_virtual
+pip install -r requirements.txt
 
 ```
 5.Navega hasta la carpeta Ideaware/mi_proyecto.
@@ -54,3 +54,21 @@ curl -X POST -d "query=inteligencia artificial" http://127.0.0.1:8000/buscar-doc
 
 ```
 Este comando enviara una solicitud REST al endpoint y este respondera con el documento con mayor similaridad a la query.
+
+
+### Ejemplo de uso:
+* Se tiene un ambiente en conda llamado Idea y en este se instalaron los paquetes necesarios para correr el sistema (listados en requirments.txt)
+* Se inicia el servicio corriendo:
+  ```
+  python manage.py runserver
+  
+  ```
+1. En la terminal se ejecuta este comando:
+
+```
+curl -X POST -F "archivo_docx=@Test.docx" http://127.0.0.1:8000/cargar-docx/
+
+```
+Este comando sube el archivo Test.docx al endpoint. Este archvio se ve de esta manera: 
+
+![Descripción de la imagen](Images/Docx.PNG)
